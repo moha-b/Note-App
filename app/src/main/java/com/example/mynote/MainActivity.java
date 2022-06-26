@@ -1,4 +1,4 @@
-package com.example.mynotes;
+package com.example.mynote;
 
 import androidx.appcompat.app.AppCompatActivity;
 
