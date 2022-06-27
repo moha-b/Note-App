@@ -9,4 +9,16 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#2a282a</color>
     <color name="search">#343334</color>
+
+    <color name="color1">#F73D93</color>
+    <color name="color2">#3AB0FF</color>
+    <color name="color3">#FBCB0A</color>
+    <color name="color4">#764AF1</color>
+    <color name="color5">#151D3B</color>
+    <color name="color6">#71DFE7</color>
+    <color name="color7">#F05454</color>
+    <color name="color8">#F9F9F9</color>
+    <color name="color9">#54E346</color>
+    <color name="color10">#FAF4B7</color>
+    <color name="color11">#F61010</color>
 </resources>
