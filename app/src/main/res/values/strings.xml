@@ -3,4 +3,9 @@
     <string name="search" />
     <string name="search_icon" />
     <string name="my_note">My Note</string>
+    <string name="back_btn">back buttom</string>
+    <string name="note_title">Note Title</string>
+    <string name="sub_title">Sub Title</string>
+    <string name="type_note_here">Type note here...</string>
+    <string name="floatactionbutton">FloatActionButton</string>
 </resources>

@@ -65,20 +65,43 @@
             android:hint="@string/search"
             android:background="@null"
             android:textColorHint="@color/white"
-            />
+            android:importantForAutofill="no" />
     </LinearLayout>
 
+    <!--    <RelativeLayout-->
+<!--        android:id="@+id/fragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/search_bar"-->
+<!--        tools:ignore="UselessLeaf">-->
+<!--</RelativeLayout>-->
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_recycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_bar"
-        app:layout_constraintVertical_bias="0.0"
-        android:paddingStart="0dp"
-        android:paddingEnd="12dp"
-        android:paddingBottom="12dp"/>
+        app:layout_constraintVertical_bias="0.073" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/add"
+        android:tint="@color/white"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/floatactionbutton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
