@@ -1,6 +1,7 @@
 package com.example.mynote.adapters;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,6 @@ import com.example.mynote.classes.Note;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -40,12 +40,12 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
     public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
         com.example.mynote.classes.Note note = Note[position];
         holder.title.setText(note.getTitle());
-        holder.subtitle.setText(note.getSubTitle());
+        //holder.subtitle.setText(note.getSubTitle());
         holder.content.setText(note.getContent());
         holder.image.setImageResource(note.getImage());
 
-
-        holder.drawable.setColor(getRandomColor());
+        int color = getRandomColor();
+        holder.drawable.setColor(holder.itemView.getResources().getColor(color));
 
     }
 
@@ -59,13 +59,14 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
         LinearLayout linearLayout;
         GradientDrawable drawable;
         TextView title;
-        TextView subtitle;
+        //TextView subtitle;
         TextView content;
         RoundedImageView image;
         public NoteViewHolder(@NonNull View itemView) {
             super(itemView);
+
             title = itemView.findViewById(R.id.note_title);
-            subtitle = itemView.findViewById(R.id.sub_title);
+            //subtitle = itemView.findViewById(R.id.sub_title);
             content = itemView.findViewById(R.id.note_content);
             image = itemView.findViewById(R.id.note_image);
             linearLayout = itemView.findViewById(R.id.note);
@@ -75,12 +76,12 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
 
     public int getRandomColor(){
 
-        List<Integer> color = new ArrayList<>();
+        ArrayList<Integer> color = new ArrayList<>();
         color.add(R.color.color1);
         color.add(R.color.color2);
         color.add(R.color.color3);
         color.add(R.color.color4);
-
+        color.add(R.color.color5);
         color.add(R.color.color6);
         color.add(R.color.color7);
         color.add(R.color.color8);
@@ -88,8 +89,26 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
         color.add(R.color.color10);
         color.add(R.color.color11);
         Random random = new Random();
-        int rand = color.get(random.nextInt(color.size()));
-        return rand;
+
+        return color.get(random.nextInt(color.size()));
     }
 }
 
+/*
+*   public String getRandomColor(){
+
+        ArrayList<String> color = new ArrayList<>();
+        color.add(String.valueOf(R.color.color1));
+        color.add(String.valueOf(R.color.color2));
+        color.add(String.valueOf(R.color.color3));
+        color.add(String.valueOf(R.color.color4));
+        color.add(String.valueOf(R.color.color6));
+        color.add(String.valueOf(R.color.color7));
+        color.add(String.valueOf(R.color.color8));
+        color.add(String.valueOf(R.color.color9));
+        color.add(String.valueOf(R.color.color10));
+        color.add(String.valueOf(R.color.color11));
+        Random random = new Random();
+        return color.get(random.nextInt(12));
+    }
+* */

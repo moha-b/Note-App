@@ -1,14 +1,20 @@
 package com.example.mynote;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.mynote.adapters.noteAdapter;
 import com.example.mynote.classes.Note;
@@ -16,11 +22,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Home extends AppCompatActivity {
 
+    LinearLayout noteLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        noteLayout = findViewById(R.id.note);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -31,15 +39,37 @@ public class Home extends AppCompatActivity {
         });
         Note[] note = new Note[]{
                 new Note(R.drawable.car,"Welcome","Greetings","welcome to your new note application"),
-                new Note(R.drawable.food,"New App","Explanation","This programme replaces the ark book with an improved edition."),
+                new Note(0,"New App","Explanation","This programme replaces the ark book with an improved edition."),
                 new Note(R.drawable.house,"hi","",""),
                 new Note(R.drawable.math,"hi","",""),
+                new Note(0,"New App","Explanation","This programme replaces the ark book with an improved edition."),
                 new Note(R.drawable.night,"hi","",""),
+                new Note(0,"New App","Explanation","This programme replaces the ark book with an improved edition."),
                 new Note(R.drawable.town,"hi","",""),
-                new Note(R.drawable.food,"hi","","")
+                new Note(0,"New App","Explanation","This programme replaces the ark book with an improved edition."),
+                new Note(R.drawable.food,"hi","",""),
+                new Note(0,"New App","Explanation","This programme replaces the ark book with an improved edition."),
         };
         RecyclerView rv = findViewById(R.id.home_recycler);
         rv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         rv.setAdapter(new noteAdapter(note));
+
+    }
+    //
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.pin:
+            case R.id.delete:
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options,menu);
+        return true;
     }
 }
