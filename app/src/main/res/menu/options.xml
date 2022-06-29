@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-<item android:id="@+id/pin"
-    android:icon="@drawable/pin"
-    android:title="@string/pin"
-    app:showAsAction="withText"
-    />
-    <item android:id="@+id/delete"
-        android:icon="@drawable/delete"
-        android:title="@string/delete"
-        app:showAsAction="withText"
-        />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/pin"
+            android:icon="@drawable/pin"
+            android:title="@string/pin"
+            />
+
+    </group>
+
+    <item android:title="Setting">
+        <menu>
+            <item android:title="setting"
+                android:icon="@drawable/settings"/>
+            <item android:title="setting"
+                android:icon="@drawable/settings"/>
+            <item android:title="setting"
+                android:icon="@drawable/settings"/>
+        </menu>
+    </item>
 </menu>

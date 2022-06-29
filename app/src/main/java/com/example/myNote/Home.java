@@ -57,8 +57,11 @@ public class Home extends AppCompatActivity {
         rv.setAdapter(new noteAdapter(note));
 
     }
-    //
-    @SuppressLint("NonConstantResourceId")
+
+}
+
+/*
+*  @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -88,4 +91,4 @@ public class Home extends AppCompatActivity {
         });
         popup.show();
     }
-}
+*/
