@@ -1,7 +1,10 @@
 package com.example.mynote;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
@@ -21,10 +24,15 @@ import android.widget.Toast;
 import com.example.mynote.adapters.noteAdapter;
 import com.example.mynote.classes.Note;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 
 public class Home extends AppCompatActivity {
 
     LinearLayout noteLayout;
+    NavigationView nav;
+    DrawerLayout drawer;
+    Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +63,13 @@ public class Home extends AppCompatActivity {
         RecyclerView rv = findViewById(R.id.home_recycler);
         rv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         rv.setAdapter(new noteAdapter(note));
+
+//        nav = findViewById(R.id.nav);
+//        drawer = findViewById(R.id.drawer);
+//        toolbar = findViewById(R.id.toolbar);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.open,R.string.close);
+//        drawer.addDrawerListener(toggle);
+//        toggle.syncState();
 
     }
 

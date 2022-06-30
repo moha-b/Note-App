@@ -85,7 +85,7 @@
                 android:importantForAutofill="no"
                 android:inputType="textAutoCorrect" />
 
-            <View
+            <ImageView
                 android:id="@+id/shape"
                 android:layout_width="5dp"
                 android:layout_height="0dp"
@@ -94,7 +94,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/create_sub_title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/create_sub_title"
-                />
+                android:contentDescription="@string/to_define_the_note_color" />
 
             <EditText
                 android:id="@+id/create_content"

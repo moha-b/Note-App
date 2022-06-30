@@ -2,6 +2,7 @@ package com.example.mynote.adapters;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +46,7 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
         holder.image.setImageResource(note.getImage());
 
         int color = getRandomColor();
+        holder.colorDefinder.getResources().getColor(color);
         holder.drawable.setColor(holder.itemView.getResources().getColor(color));
 
     }
@@ -58,6 +60,7 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
     static class NoteViewHolder extends RecyclerView.ViewHolder{
         LinearLayout linearLayout;
         GradientDrawable drawable;
+        View colorDefinder;
         TextView title;
         //TextView subtitle;
         TextView content;
@@ -71,6 +74,7 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
             image = itemView.findViewById(R.id.note_image);
             linearLayout = itemView.findViewById(R.id.note);
             drawable = (GradientDrawable) linearLayout.getBackground();
+            colorDefinder = itemView.findViewById(R.id.shape);
         }
     }
 

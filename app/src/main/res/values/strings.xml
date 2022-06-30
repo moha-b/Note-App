@@ -24,4 +24,8 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="mohab">Mohab</string>
     <string name="mohabzax4_gmail_com">MohabZax4@gmail.com</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="to_definethe_note_color">to definethe note color</string>
+    <string name="to_define_the_note_color" />
 </resources>

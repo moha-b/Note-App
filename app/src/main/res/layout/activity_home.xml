@@ -10,6 +10,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
+        android:gravity="center_vertical"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginStart="12dp"
@@ -18,14 +19,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.049">
 
-        <ImageView
-            android:id="@+id/sort_icon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/ic_sort"
-            android:layout_marginEnd="20dp"/>
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:src="@drawable/ic_sort"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            />-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,26 +77,6 @@
             android:importantForAutofill="no" />
     </LinearLayout>
 
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical"
-        tools:openDrawer="start">
-
-        <com.google.android.material.navigation.NavigationView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:menu="@menu/options"
-            android:background="@color/background"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            app:headerLayout="@layout/header"/>
-
-    </androidx.drawerlayout.widget.DrawerLayout>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home_recycler"
         android:layout_width="match_parent"
@@ -120,5 +100,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:contentDescription="@string/floatactionbutton" />
+
+<!--    <androidx.drawerlayout.widget.DrawerLayout-->
+<!--        android:id="@+id/drawer"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:orientation="vertical"-->
+<!--        tools:openDrawer="start">-->
+
+<!--        <com.google.android.material.navigation.NavigationView-->
+<!--            android:id="@+id/nav"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:menu="@menu/options"-->
+<!--            android:background="@color/background"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:fitsSystemWindows="true"-->
+<!--            app:headerLayout="@layout/header"/>-->
+
+<!--    </androidx.drawerlayout.widget.DrawerLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
