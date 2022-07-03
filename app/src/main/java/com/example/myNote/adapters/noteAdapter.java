@@ -1,12 +1,11 @@
 package com.example.mynote.adapters;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,7 +17,6 @@ import com.example.mynote.classes.Note;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder> {
@@ -46,9 +44,8 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
         holder.image.setImageResource(note.getImage());
 
         int color = getRandomColor();
-        holder.colorDefinder.getResources().getColor(color);
-        holder.drawable.setColor(holder.itemView.getResources().getColor(color));
-
+        //holder.drawableNoteColor.setColor(holder.itemView.getResources().getColor(color));
+        holder.drawableNote.setColor(holder.itemView.getResources().getColor(color));
     }
 
 
@@ -59,8 +56,9 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
 
     static class NoteViewHolder extends RecyclerView.ViewHolder{
         LinearLayout linearLayout;
-        GradientDrawable drawable;
-        View colorDefinder;
+        GradientDrawable drawableNote;
+        GradientDrawable drawableNoteColor;
+        ImageView shape;
         TextView title;
         //TextView subtitle;
         TextView content;
@@ -73,8 +71,9 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
             content = itemView.findViewById(R.id.note_content);
             image = itemView.findViewById(R.id.note_image);
             linearLayout = itemView.findViewById(R.id.note);
-            drawable = (GradientDrawable) linearLayout.getBackground();
-            colorDefinder = itemView.findViewById(R.id.shape);
+            drawableNote = (GradientDrawable) linearLayout.getBackground();
+            shape = itemView.findViewById(R.id.shape);
+           // drawableNoteColor = (GradientDrawable) shape.getBackground();
         }
     }
 
