@@ -42,7 +42,12 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
         //holder.subtitle.setText(note.getSubTitle());
         holder.content.setText(note.getContent());
         holder.image.setImageResource(note.getImage());
-
+        holder.like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.like.setColorFilter(getRandomColor());
+            }
+        });
         int color = getRandomColor();
         //holder.drawableNoteColor.setColor(holder.itemView.getResources().getColor(color));
         holder.drawableNote.setColor(holder.itemView.getResources().getColor(color));
@@ -59,6 +64,7 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
         GradientDrawable drawableNote;
         GradientDrawable drawableNoteColor;
         ImageView shape;
+        ImageView like;
         TextView title;
         //TextView subtitle;
         TextView content;
@@ -73,6 +79,7 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
             linearLayout = itemView.findViewById(R.id.note);
             drawableNote = (GradientDrawable) linearLayout.getBackground();
             shape = itemView.findViewById(R.id.shape);
+            like = itemView.findViewById(R.id.like);
            // drawableNoteColor = (GradientDrawable) shape.getBackground();
         }
     }
