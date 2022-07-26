@@ -14,25 +14,20 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.mynote.databinding.ActivityCreateNoteBinding;
+import com.example.mynote.databinding.ActivityHomeBinding;
+
 public class CreateNote extends AppCompatActivity {
 
-    EditText title, subTitle, content;
-    ImageView back ,done;
+    ActivityCreateNoteBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_note);
+        binding = ActivityCreateNoteBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        title = findViewById(R.id.create_note_title);
-        subTitle = findViewById(R.id.create_sub_title);
-        content = findViewById(R.id.create_content);
-        back = findViewById(R.id.back_btn);
-        done = findViewById(R.id.done);
-
-
-
-        back.setOnClickListener(new View.OnClickListener() {
+        binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
@@ -40,7 +35,7 @@ public class CreateNote extends AppCompatActivity {
         });
 
 
-        check(title);
+        //check(title);
     }
 
     public void check(EditText text){

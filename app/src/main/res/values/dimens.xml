@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="rounded">10dp</dimen>
+    <dimen name="wide_space">16dp</dimen>
+    <dimen name="short_space">8dp</dimen>
+    <dimen name="icon_height">20dp</dimen>
+    <dimen name="title">20sp</dimen>
+    <dimen name="content">13sp</dimen>
+    <dimen name="subTitle">16sp</dimen>
+</resources>

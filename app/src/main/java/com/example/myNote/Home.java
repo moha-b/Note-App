@@ -22,25 +22,22 @@ import android.widget.Toast;
 
 import com.example.mynote.adapters.noteAdapter;
 import com.example.mynote.classes.Note;
+import com.example.mynote.databinding.ActivityHomeBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class Home extends AppCompatActivity {
 
-    LinearLayout noteLayout;
-    NavigationView nav;
-    DrawerLayout drawer;
-    Toolbar toolbar;
+    ActivityHomeBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        binding = ActivityHomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        noteLayout = findViewById(R.id.note);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        //FloatingActionButton fab = findViewById(R.id.fab);
+        binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Home.this,CreateNote.class));
@@ -59,21 +56,17 @@ public class Home extends AppCompatActivity {
                 new Note(R.drawable.food,"hi","",""),
                 new Note(0,"New App","Explanation","This programme replaces the ark book with an improved edition."),
         };
-        RecyclerView rv = findViewById(R.id.home_recycler);
-        rv.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
-        rv.setAdapter(new noteAdapter(note));
-
+        //RecyclerView rv = findViewById(R.id.home_recycler);
+        binding.homeRecycler.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        binding.homeRecycler.setAdapter(new noteAdapter(note));
+    }
+}
 //        nav = findViewById(R.id.nav);
 //        drawer = findViewById(R.id.drawer);
 //        toolbar = findViewById(R.id.toolbar);
 //        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.open,R.string.close);
 //        drawer.addDrawerListener(toggle);
 //        toggle.syncState();
-
-    }
-
-}
-
 /*
 *  @SuppressLint("NonConstantResourceId")
     @Override

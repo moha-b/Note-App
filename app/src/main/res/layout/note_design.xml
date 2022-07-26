@@ -12,26 +12,25 @@
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/note_image"
-            app:riv_corner_radius_top_right="10dp"
-            app:riv_corner_radius_top_left="10dp"
+            app:riv_corner_radius_top_right="@dimen/rounded"
+            app:riv_corner_radius_top_left="@dimen/rounded"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-
             />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="10dp"
-        android:paddingVertical="8dp">
+        android:paddingHorizontal="@dimen/wide_space"
+        android:paddingVertical="@dimen/short_space">
 
         <TextView
             android:id="@+id/note_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="@dimen/title"
             android:textColor="@color/white"
             />
 <!--        <TextView-->
@@ -46,38 +45,38 @@
             android:id="@+id/note_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            android:textSize="@dimen/content"
             android:textColor="@color/white"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/short_space"
             android:maxLines="2"
             android:ellipsize="marquee"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/short_space"
             />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="8dp">
+            android:paddingStart="3dp"
+            android:paddingVertical="@dimen/short_space">
             <ImageView
                 android:id="@+id/like"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/icon_height"
+                android:layout_height="@dimen/icon_height"
                 android:contentDescription="@string/like_icon"
                 android:src="@drawable/ic_like"/>
 
             <ImageView
                 android:id="@+id/comment"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginHorizontal="39dp"
+                android:layout_width="@dimen/icon_height"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginHorizontal="40dp"
                 android:contentDescription="@string/like_icon"
                 android:src="@drawable/comment"/>
 
             <ImageView
                 android:id="@+id/share"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/icon_height"
+                android:layout_height="@dimen/icon_height"
                 android:contentDescription="@string/like_icon"
                 android:src="@drawable/share"/>
         </LinearLayout>

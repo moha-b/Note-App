@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mynote.R;
 import com.example.mynote.classes.Note;
+import com.example.mynote.databinding.NoteDesignBinding;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ import java.util.Random;
 public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder> {
 
     private Note[] Note;
-
+    //NoteDesignBinding binding;
 
     public noteAdapter(Note[] notes) {
         this.Note = notes;
@@ -31,6 +32,7 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
     @NonNull
     @Override
     public NoteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //binding = NoteDesignBinding.bind(LayoutInflater.from(parent.getContext()).inflate(R.layout.note_design,parent,false));
         return new NoteViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.note_design,parent,false));
     }
 
@@ -59,7 +61,7 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
         return Note.length;
     }
 
-    static class NoteViewHolder extends RecyclerView.ViewHolder{
+    class NoteViewHolder extends RecyclerView.ViewHolder{
         LinearLayout linearLayout;
         GradientDrawable drawableNote;
         GradientDrawable drawableNoteColor;
@@ -71,7 +73,7 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.NoteViewHolder
         RoundedImageView image;
         public NoteViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            //binding = NoteDesignBinding.bind(itemView);
             title = itemView.findViewById(R.id.note_title);
             //subtitle = itemView.findViewById(R.id.sub_title);
             content = itemView.findViewById(R.id.note_content);
